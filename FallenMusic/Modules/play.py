@@ -235,11 +235,11 @@ async def play(_, message: Message):
 
         except NoActiveGroupCall:
             return await fallen.edit_text(
-                "**» Aktif görüntülü sohbet bulunamadı.**\n\nlütfen görüntülü sohbeti başlattığınızdan emin olun."
+                f"**» Aktif görüntülü sohbet bulunamadı.**\n\nlütfen görüntülü sohbeti başlattığınızdan emin olun."
             )
         except TelegramServerError:
             return await fallen.edit_text(
-                "» Telegram'da bazı dahili sorunlar yaşanıyor. Lütfen görüntülü sohbeti yeniden başlatıp tekrar deneyin."
+                f"» Telegram'da bazı dahili sorunlar yaşanıyor. Lütfen görüntülü sohbeti yeniden başlatıp tekrar deneyin."
         except UnMuteNeeded:
             return await fallen.edit_text(
                 f"» {BOT_NAME} Asistan'ın görüntülü sohbette sesi kapatıldı,\n\nLütfen sesi açın {ASS_MENTION} Görüntülü sohbet yok ve tekrar oynatmayı deneyin."
