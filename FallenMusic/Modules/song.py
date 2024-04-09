@@ -32,13 +32,13 @@ from youtube_search import YoutubeSearch
 from FallenMusic import BOT_MENTION, BOT_USERNAME, LOGGER, app
 
 
-@app.on_message(filters.command(["song", "vsong", "video", "music"]))
+@app.on_message(filters.command(["bul", "vbul", "video", "music"]))
 async def song(_, message: Message):
     try:
         await message.delete()
     except:
         pass
-    m = await message.reply_text("🔎")
+    m = await message.reply_text("💫")
 
     query = "".join(" " + str(i) for i in message.command[1:])
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
@@ -55,16 +55,16 @@ async def song(_, message: Message):
     except Exception as ex:
         LOGGER.error(ex)
         return await m.edit_text(
-            f"ғᴀɪʟᴇᴅ ᴛᴏ ғᴇᴛᴄʜ ᴛʀᴀᴄᴋ ғʀᴏᴍ ʏᴛ-ᴅʟ.\n\n**ʀᴇᴀsᴏɴ :** `{ex}`"
+            f"ғᴀɪʟᴇᴅ ᴛᴏ Yt-dl parça formu getirilemedi.\n\n**Sebep :** `{ex}`"
         )
 
-    await m.edit_text("» ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ sᴏɴɢ,\n\nᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...")
+    await m.edit_text("» şarkı indiriliyor,\n\nyükleniyor az bekle...")
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"☁️ **ᴛɪᴛʟᴇ :** [{title[:23]}]({link})\n⏱️ **ᴅᴜʀᴀᴛɪᴏɴ :** `{duration}`\n🥀 **ᴜᴘʟᴏᴀᴅᴇᴅ ʙʏ :** {BOT_MENTION}"
+        rep = f"☁️ **bilgi :** [{title[:23]}]({link})\n⏱️ **dakika :** `{duration}`\n🥀 **ᴜᴘʟᴏᴀᴅᴇᴅ ʙʏ :** {BOT_MENTION}"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(dur_arr[i]) * secmul
@@ -74,7 +74,7 @@ async def song(_, message: Message):
                 [
                     [
                         InlineKeyboardButton(
-                            text="ʏᴏᴜᴛᴜʙᴇ",
+                            text="yutube",
                             url=link,
                         )
                     ]
@@ -91,7 +91,7 @@ async def song(_, message: Message):
             )
             if message.chat.type != ChatType.PRIVATE:
                 await message.reply_text(
-                    "ᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴘᴍ, sᴇɴᴛ ᴛʜᴇ ʀᴇǫᴜᴇsᴛᴇᴅ sᴏɴɢ ᴛʜᴇʀᴇ."
+                    "Lütfen Başbakanınızın talep edilen oğlunu oraya gönderdiğini kontrol edin."
                 )
         except:
             start_butt = InlineKeyboardMarkup(
@@ -105,12 +105,12 @@ async def song(_, message: Message):
                 ]
             )
             return await m.edit_text(
-                text="ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴀɴᴅ sᴛᴀʀᴛ ᴍᴇ ғᴏʀ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ sᴏɴɢs.",
+                text="Aşağıdaki düğmeye tıklayın ve şarkıları indirmeye başlayın.",
                 reply_markup=start_butt,
             )
         await m.delete()
     except:
-        return await m.edit_text("ғᴀɪʟᴇᴅ ᴛᴏ ᴜᴘʟᴏᴀᴅ ᴀᴜᴅɪᴏ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ sᴇʀᴠᴇʀs.")
+        return await m.edit_text("telgraf sunucularına ses yükleme başarısız oldu.")
 
     try:
         os.remove(audio_file)
