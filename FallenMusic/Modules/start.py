@@ -38,7 +38,7 @@ async def fallen_st(_, message: Message):
         if len(message.text.split()) > 1:
             cmd = message.text.split(None, 1)[1]
             if cmd[0:3] == "inf":
-                m = await message.reply_text("🔎")
+                m = await message.reply_text("🎙️")
                 query = (str(cmd)).replace("info_", "", 1)
                 query = f"https://www.youtube.com/watch?v={query}"
                 results = VideosSearch(query, limit=1)
@@ -52,15 +52,15 @@ async def fallen_st(_, message: Message):
                     link = result["link"]
                     published = result["publishedTime"]
                 searched_text = f"""
-➻ **ᴛʀᴀᴄᴋ ɪɴғᴏʀɴᴀᴛɪᴏɴ** 
+➻ **sarki bilgileri** 
 
-📌 **ᴛɪᴛʟᴇ :** {title}
+📌 **bilgi :** {title}
 
-⏳ **ᴅᴜʀᴀᴛɪᴏɴ :** {duration} ᴍɪɴᴜᴛᴇs
-👀 **ᴠɪᴇᴡs :** `{views}`
-⏰ **ᴩᴜʙʟɪsʜᴇᴅ ᴏɴ :** {published}
-🔗 **ʟɪɴᴋ :** [ᴡᴀᴛᴄʜ ᴏɴ ʏᴏᴜᴛᴜʙᴇ]({link})
-🎥 **ᴄʜᴀɴɴᴇʟ :** [{channel}]({channellink})
+⏳ **süre :** {duration} ᴍɪɴᴜᴛᴇs
+👀 **izlenme :** `{views}`
+⏰ **yayınlandı :** {published}
+🔗 **link :** [ᴡᴀᴛᴄʜ ᴏɴ ʏᴏᴜᴛᴜʙᴇ]({link})
+🎥 **kanal :** [{channel}]({channellink})
 
 💖 sᴇᴀʀᴄʜ ᴩᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME}"""
                 key = InlineKeyboardMarkup(
@@ -68,7 +68,7 @@ async def fallen_st(_, message: Message):
                         [
                             InlineKeyboardButton(text="ʏᴏᴜᴛᴜʙᴇ", url=link),
                             InlineKeyboardButton(
-                                text="sᴜᴩᴩᴏʀᴛ", url=config.SUPPORT_CHAT
+                                text="destek", url=config.SUPPORT_CHAT
                             ),
                         ],
                     ]
