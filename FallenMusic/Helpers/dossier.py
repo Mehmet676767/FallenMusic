@@ -26,36 +26,36 @@ PM_START_TEXT = """
 ʜᴇʏ {0}, 🥀
 ๏ ᴛʜɪs ɪs** {1} !
 
-➻ ᴀ ғᴀsᴛ ᴀɴᴅ ᴘᴏᴡᴇʀғᴜʟ ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ ʙᴏᴛ.
+🇹🇷 telegramın en hızlı ve güçlü botu .
 """
 
 START_TEXT = """
-**ʜᴇʏ** {0}, 🥀
-  {1} ᴄᴀɴ ɴᴏᴡ ᴩʟᴀʏ sᴏɴɢs ɪɴ {2}.
+**hoş geldiniz** {0}, 🥀
+  {1} komutlarım aşağıdan ordan özelliklerime bakabilirsin {2}.
 
 ──────────────────
-➻ ғᴏʀ ɢᴇᴛᴛɪɴɢ ʜᴇʟᴘ ᴀʙᴏᴜᴛ ᴍᴇ ᴏʀ ɪғ ʏᴏᴜ ᴡᴀɴɴᴀ ᴀsᴋ sᴏᴍᴇᴛʜɪɴɢ ʏᴏᴜ ᴄᴀɴ ᴊᴏɪɴ ᴍʏ [sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ]({3}).
+➻ Hakkımda bilgi almak için ya da bir şey sormak istersen bana katılabilirsin [sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ]({3}).
 """
 
 HELP_TEXT = f"""
-<u>❄ **ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs ғᴏʀ ᴜsᴇʀs ɪɴ {BOT_NAME} :**</u>
+<u>❄ **kullanıcılar için mevcut komutlar {BOT_NAME} :**</u>
 
-๏ /play : sᴛᴀʀᴛs sᴛʀᴇᴀᴍɪɴɢ ᴛʜᴇ ʀᴇǫᴜᴇsᴛᴇᴅ ᴛʀᴀᴄᴋ ᴏɴ ᴠɪᴅᴇᴏᴄʜᴀᴛ.
-๏ /pause : ᴩᴀᴜsᴇ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴩʟᴀʏɪɴɢ sᴛʀᴇᴀᴍ.
-๏ /resume : ʀᴇsᴜᴍᴇ ᴛʜᴇ ᴩᴀᴜsᴇᴅ sᴛʀᴇᴀᴍ.
-๏ /skip : sᴋɪᴩ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴩʟᴀʏɪɴɢ sᴛʀᴇᴀᴍ ᴀɴᴅ sᴛᴀʀᴛ sᴛʀᴇᴀᴍɪɴɢ ᴛʜᴇ ɴᴇxᴛ ᴛʀᴀᴄᴋ ɪɴ ǫᴜᴇᴜᴇ.
-๏ /end : ᴄʟᴇᴀʀs ᴛʜᴇ ǫᴜᴇᴜᴇ ᴀɴᴅ ᴇɴᴅ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴩʟᴀʏɪɴɢ sᴛʀᴇᴀᴍ.
+๏ /oynat : [sarki ismi] şarkıyı başlatır.
+๏ /dur : şarkıyı durdurur.
+๏ /dewam : şarkıyı dewam eder.
+๏ /skip : şarkıyı atlar diğer sıradaki Şarkıyı açar.
+๏ /end : sesli sohbeti durdurur.
 
-๏ /ping : sʜᴏᴡ ᴛʜᴇ ᴩɪɴɢ ᴀɴᴅ sʏsᴛᴇᴍ sᴛᴀᴛs ᴏғ ᴛʜᴇ ʙᴏᴛ.
-๏ /sudolist : sʜᴏᴡs ᴛʜᴇ ʟɪsᴛ ᴏғ sᴜᴅᴏ ᴜsᴇʀs ᴏғ ᴛʜᴇ ʙᴏᴛ.
+๏ /ping : info çeker.
+๏ /sudolist : yonetici sayisina bakar.
 
-๏ /song : ᴅᴏᴡɴʟᴏᴀᴅs ᴛʜᴇ ʀᴇǫᴜᴇsᴛᴇᴅ sᴏɴɢ ᴀɴᴅ sᴇɴᴅ ɪᴛ ᴛᴏ ʏᴏᴜ.
+๏ /song : [şarkı ismi] istediğiniz şarkıyı arar bulur.
 
 ๏ /search : sᴇᴀʀᴄᴇs ᴛʜᴇ ɢɪᴠᴇɴ ǫᴜᴇʀʏ ᴏɴ ʏᴏᴜᴛᴜʙᴇ ᴀɴᴅ sʜᴏᴡs ʏᴏᴜ ᴛʜᴇ ʀᴇsᴜʟᴛ.
 """
 
 HELP_SUDO = f"""
-<u>✨ **sᴜᴅᴏ ᴄᴏᴍᴍᴀɴᴅs ɪɴ {BOT_NAME} :**</u>
+<u>✨ **yonetici komutları ɪɴ {BOT_NAME} :**</u>
 
 ๏ /activevc : sʜᴏᴡs ᴛʜᴇ ʟɪsᴛ ᴏғ ᴄᴜʀʀᴇɴᴛʟʏ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇᴄʜᴀᴛs.
 ๏ /eval or /sh : ʀᴜɴs ᴛʜᴇ ɢɪᴠᴇɴ ᴄᴏᴅᴇ ᴏɴ ᴛʜᴇ ʙᴏᴛ's ᴛᴇʀᴍɪɴᴀʟ.
